@@ -36,6 +36,10 @@ const mensajesDeError = {
         valueMissing: "Este campo no puede estar vacio",
         customError: "Debes tener al menos 18 años de edad"
     },
+    numero:{
+        valueMissing: "Este campo no puede estar vacio",
+        patternMismatch: "El formato es de XXXXXXXXXX 10 numeros"
+    },
     direccion:{
         valueMissing: "Este campo no puede estar vacio",
         patternMismatch: "La direccion debe de contener entre 10 a 40 caracteres"
@@ -58,9 +62,9 @@ function mostrarMensajeDeError(tipoDeInput, input) {
     let mensaje = "";
     tipoErrores.forEach(error => {
         if(input.validity[error]){
-            console.log(tipoDeInput, error);
-            console.log(input.validity[error]);
-            console.log(mensajesDeError[tipoDeInput][error]);
+            // console.log(tipoDeInput, error);
+            // console.log(input.validity[error]);
+            // console.log(mensajesDeError[tipoDeInput][error]);
             mensaje = mensajesDeError[tipoDeInput][error];
         }
     })
